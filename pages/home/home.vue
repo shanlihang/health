@@ -69,7 +69,7 @@ const otherMenu = reactive([
 ])
 
 const contactMenu = reactive([
-	{id:1,name:'联系我们',icon:'chat',router:''},
+	{id:1,name:'联系我们',icon:'chat',router:'/pages/contact/contact'},
 ])
 
 const navItem = (path:string) => {
