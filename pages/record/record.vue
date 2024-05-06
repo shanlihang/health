@@ -1,7 +1,7 @@
 <template>
 	<view class="record" @click="closeOutside">
 		<view class="drop">
-			<wd-drop-menu class="drop-menu">
+			<wd-drop-menu custom-class="drop-menu">
 			    <wd-drop-menu-item v-model="choose.value1" :options="optionOne" />
 			    <wd-drop-menu-item v-model="choose.value2" :options="optionTwo" />
 			</wd-drop-menu>
@@ -12,8 +12,12 @@
 	
 	<wd-popup v-model="filter" position="bottom" closable custom-style="height: 90%;backgroundColor:#494949;">
 		<view class="popup">
+			<view class="title">
+				条件筛选
+			</view>
 			<view class="btn">
-				
+				<view class="reset">重置</view>
+				<view class="sure">确认</view>
 			</view>
 		</view>
 	</wd-popup>
@@ -53,6 +57,7 @@ const showFilter = () => {
 	.drop{
 		display: flex;
 		align-items: center;
+		border-bottom: 2rpx solid #fff;
 		.drop-menu{
 			flex: 1 0 auto;
 			margin-right: 10rpx;
@@ -68,14 +73,30 @@ const showFilter = () => {
 	}
 }
 .popup{
-	position: relative;
+	.title{
+		height: 80rpx;
+		line-height: 80rpx;
+		font-size: 32rpx;
+		font-weight: bold;
+		text-align: center;
+	}
 	.btn{
-		position: absolute;
-		top: 800rpx;
 		width: 90%;
-		height: 100rpx;
+		margin: 0 auto;
 		display: flex;
-		background-color: aqua;
+		border-radius: 48rpx;
+		overflow: hidden;
+		.reset,.sure{
+			width: 50%;
+			height: 100rpx;
+			font-size: 36rpx;
+			text-align: center;
+			line-height: 100rpx;
+			background-color: #F5BE72;
+		}
+		.sure{
+			background-color: #93CC77;
+		}
 	}
 }
 </style>
