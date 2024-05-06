@@ -46,8 +46,8 @@
 				"text": "记录"
 			},  {
 				"pagePath": "pages/home/home",
-				"iconPath": "static/tabBar/home.png",
-				"selectedIconPath": "static/tabBar/homeSelect.png",
+				"iconPath": "static/tabBar/mine.png",
+				"selectedIconPath": "static/tabBar/mineSelect.png",
 				"text": "我的"
 			}
 		]
