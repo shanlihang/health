@@ -13,7 +13,7 @@
 			</view>
 		</view>
 		<view class="menu">
-			<view class="item" v-for="item in baseMenu" :key="item.id">
+			<view class="item" v-for="item in baseMenu" :key="item.id" @click="navItem(item.router)">
 				<view class="left">
 					<wd-icon :name="item.icon" size="22px" style="display: flex;align-items: center;"></wd-icon>
 					<text style="margin-left: 16rpx;">{{item.name}}</text>
@@ -25,7 +25,7 @@
 			</view>
 		</view>
 		<view class="menu">
-			<view class="item" v-for="item in otherMenu" :key="item.id">
+			<view class="item" v-for="item in otherMenu" :key="item.id" @click="navItem(item.router)">
 				<view class="left">
 					<wd-icon :name="item.icon" size="22px" style="display: flex;align-items: center;"></wd-icon>
 					<text style="margin-left: 16rpx;">{{item.name}}</text>
@@ -38,7 +38,7 @@
 		</view>
 		
 		<view class="menu">
-			<view class="item" v-for="item in contactMenu" :key="item.id">
+			<view class="item" v-for="item in contactMenu" :key="item.id" @click="navItem(item.router)">
 				<view class="left">
 					<wd-icon :name="item.icon" size="22px" style="display: flex;align-items: center;"></wd-icon>
 					<text style="margin-left: 16rpx;">{{item.name}}</text>
@@ -57,7 +57,7 @@ import {reactive} from 'vue'
 
 const baseMenu = reactive([
 	{id:1,name:'健康报表',icon:'chart',router:''},
-	{id:2,name:'标准数据',icon:'keywords',router:''},
+	{id:2,name:'标准指标',icon:'keywords',router:'/pages/standard/standard'},
 	{id:3,name:'健康推送',icon:'chart-bubble',router:''},
 	{id:4,name:'意见反馈',icon:'mail',router:''}
 ])
@@ -72,6 +72,11 @@ const contactMenu = reactive([
 	{id:1,name:'联系我们',icon:'chat',router:''},
 ])
 
+const navItem = (path:string) => {
+	uni.navigateTo({
+		url:path
+	})
+}
 </script>
 
 <style lang="less" scoped>
