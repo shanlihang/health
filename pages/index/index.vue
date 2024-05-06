@@ -1,52 +1,62 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/noAvatar.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
+	<view class="index">
+		<view class="message">
+			<view class="title">今日推送</view>
+		</view>
+		<view class="data">
+			<view class="year"></view>
+			<view class="total"></view>
+		</view>
+		<view class="line">
+			<view class="title">折线图</view>
 		</view>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+<script setup lang="ts">
 
-		},
-		methods: {
-
-		}
-	}
 </script>
 
-<style>
-	.content {
+<style scoped lang="less">
+.index{
+	padding-top: 24rpx;
+	.message{
+		margin: 0 24rpx;
+		height: 500rpx;
+		border-radius: 6rpx;
+		overflow: hidden;
+		background-color: #494949;
+		.title{
+			height: 70rpx;
+			line-height: 70rpx;
+			font-weight: bold;
+			text-indent: 1rem;
+			border-bottom: 2rpx solid #383838;
+		}
+	}
+	.data{
+		margin: 24rpx 24rpx;
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
+		.year,.total{
+			width: 338rpx;
+			height: 300rpx;
+			border-radius:6rpx;
+			background-color: #494949;
+		}
+		.total{}
 	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
+	.line{
+		margin: 0 24rpx;
+		height: 400rpx;
+		background-color: #494949;
+		.title{
+			height: 70rpx;
+			line-height: 70rpx;
+			font-weight: bold;
+			text-indent: 1rem;
+			border-bottom: 2rpx solid #383838;
+		}
 	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+}
 </style>
