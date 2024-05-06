@@ -86,14 +86,13 @@ const contactMenu = reactive([
 			width: 90%;
 			display: flex;
 			.avatar{
+				margin-right: 20rpx;
 				width: 200rpx;
 				height: 200rpx;
-				border-radius: 50%;
 				overflow: hidden;
 			}
 			.name{
 				height: 200rpx;
-				margin-left: 50rpx;
 				flex: 1 0 auto;
 				display: flex;
 				flex-direction: column;
