@@ -49,6 +49,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/policy/policy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "隐私政策",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/protocol/protocol",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户协议",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"

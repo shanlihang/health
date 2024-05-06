@@ -64,8 +64,8 @@ const baseMenu = reactive([
 
 const otherMenu = reactive([
 	{id:1,name:'使用手册',icon:'books',router:''},
-	{id:2,name:'隐私政策',icon:'evaluation',router:''},
-	{id:3,name:'用户协议',icon:'spool',router:''},
+	{id:2,name:'隐私政策',icon:'evaluation',router:'/pages/policy/policy'},
+	{id:3,name:'用户协议',icon:'spool',router:'/pages/protocol/protocol'},
 ])
 
 const contactMenu = reactive([
