@@ -59,7 +59,7 @@ const baseMenu = reactive([
 	{id:1,name:'健康报表',icon:'chart',router:''},
 	{id:2,name:'标准指标',icon:'keywords',router:'/pages/standard/standard'},
 	{id:3,name:'健康推送',icon:'chart-bubble',router:''},
-	{id:4,name:'意见反馈',icon:'mail',router:''}
+	{id:4,name:'意见反馈',icon:'mail',router:'/pages/feedBack/feedBack'}
 ])
 
 const otherMenu = reactive([

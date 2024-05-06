@@ -31,6 +31,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/feedBack/feedBack",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "意见反馈",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/feedBackList/feedBackList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "意见反馈列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"
