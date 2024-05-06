@@ -15,5 +15,6 @@
 <style>
 page{
 	background-color: #393939;
+	color:#E0E0E0;
 }
 </style>
