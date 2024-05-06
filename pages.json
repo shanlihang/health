@@ -22,7 +22,16 @@
 				"enablePullDownRefresh" : false
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/standard/standard",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "标准指标",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationStyle": "custom"
 	},
