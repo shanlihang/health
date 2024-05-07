@@ -9,7 +9,7 @@
 					<view style="margin-bottom: 20rpx;">昵称</view>
 					<wd-tag color="#FAA21E" bg-color="#FAA21E" plain>认证状态</wd-tag>
 				</view>
-				<wd-icon name="arrow-right" size="28px" style="display: flex;align-items: center;"></wd-icon>
+				<wd-icon name="arrow-right" size="28px" style="display: flex;align-items: center;" @click="setInfo"></wd-icon>
 			</view>
 		</view>
 		<view class="menu">
@@ -75,6 +75,12 @@ const contactMenu = reactive([
 const navItem = (path:string) => {
 	uni.navigateTo({
 		url:path
+	})
+}
+
+const setInfo = () => {
+	uni.navigateTo({
+		url:'/pages/userInfo/userInfo',
 	})
 }
 </script>
