@@ -33,10 +33,7 @@ const data  = reactive([
 
 const copy = (value:string) => {
 	uni.setClipboardData({
-		data: value,
-		success: function () {
-			toast.show('复制成功')
-		}
+		data: value
 	})
 }
 
