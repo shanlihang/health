@@ -88,8 +88,15 @@
         	"path" : "pages/manual/manual",
         	"style" : 
         	{
-        		"navigationBarTitleText" : "使用手册\r
-        \t",
+        		"navigationBarTitleText" : "使用手册",
+        		"enablePullDownRefresh" : false
+        	}
+        },
+        {
+        	"path" : "pages/report/report",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "检测报表",
         		"enablePullDownRefresh" : false
         	}
         }
