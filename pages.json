@@ -83,6 +83,15 @@
         		"navigationBarTitleText" : "个人信息",
         		"enablePullDownRefresh" : false
         	}
+        },
+        {
+        	"path" : "pages/manual/manual",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "使用手册\r
+        \t",
+        		"enablePullDownRefresh" : false
+        	}
         }
     ],
 	"globalStyle": {
