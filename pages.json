@@ -99,6 +99,14 @@
         		"navigationBarTitleText" : "检测报表",
         		"enablePullDownRefresh" : false
         	}
+        },
+        {
+        	"path" : "pages/message/message",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "健康推送",
+        		"enablePullDownRefresh" : false
+        	}
         }
     ],
 	"globalStyle": {

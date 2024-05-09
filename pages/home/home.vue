@@ -58,7 +58,7 @@ import {reactive} from 'vue'
 const baseMenu = reactive([
 	{id:1,name:'检测报表',icon:'chart',router:'/pages/report/report'},
 	{id:2,name:'标准指标',icon:'keywords',router:'/pages/standard/standard'},
-	{id:3,name:'健康推送',icon:'chart-bubble',router:''},
+	{id:3,name:'健康推送',icon:'chart-bubble',router:'/pages/message/message'},
 	{id:4,name:'意见反馈',icon:'mail',router:'/pages/feedBack/feedBack'}
 ])
 
