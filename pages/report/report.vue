@@ -1,10 +1,10 @@
 <template>
 	<view class="report">
-		<wd-navbar title="体检数据" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
+		<!-- <wd-navbar title="体检数据" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
 		  <template #capsule>
 		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
 		  </template>
-		</wd-navbar>
+		</wd-navbar> -->
 		<view class="num">
 			<view class="item">
 				<view class="label">近一年体检次数</view>
@@ -19,15 +19,15 @@
 </template>
 
 <script setup lang="ts">
-const handleBack = () => {
-	uni.navigateBack()
-}
+// const handleBack = () => {
+// 	uni.navigateBack()
+// }
 
-const handleBackHome = () => {
-	uni.switchTab({
-		url:'/pages/index/index'
-	})
-}
+// const handleBackHome = () => {
+// 	uni.switchTab({
+// 		url:'/pages/index/index'
+// 	})
+// }
 </script>
 
 <style scoped lang="less">

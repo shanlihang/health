@@ -5,9 +5,9 @@
   @include b(table) {
     background: $-dark-background;
 
-    @include when(border) {
-      border: 1px solid $-dark-border-color;
-    }
+    // @include when(border) {
+    //   border: 1px solid $-dark-border-color;
+    // }
 
     @include e(cell) {
       color: $-dark-color;
@@ -78,12 +78,12 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    background: $-table-bg;
+    background: #494949;
     width: 100px;
     min-height: 50px;
     padding: 8px 10px;
     font-size: $-table-font-size;
-    color: $-table-color;
+    color: #fff;
     --wot-sort-button-height: 30px;
 
     @include when(border) {
@@ -92,7 +92,8 @@
     }
 
     @include when(stripe) {
-      background: $-table-stripe-bg;
+      // background: $-table-stripe-bg;
+	  background-color: #494949;
     }
 
     @include when(fixed) {

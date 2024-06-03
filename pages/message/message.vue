@@ -1,10 +1,10 @@
 <template>
 	<view class="message">
-		<wd-navbar title="体检数据" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
+		<!-- <wd-navbar title="体检数据" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
 		  <template #capsule>
 		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
 		  </template>
-		</wd-navbar>
+		</wd-navbar> -->
 		<view class="list">
 			<MessageCard v-for="item in data" :key="item.id" :item="item"/>
 		</view>
@@ -20,15 +20,15 @@ const data = reactive([
 	{id:2,title:'是佛啊是佛啊是佛i啊是佛啊寺活佛啊似乎萨法时',content:'啊是佛啊寺活佛啊似乎萨法佛啊是佛啊是佛i啊是佛啊寺活佛啊似乎萨法时族',created_at:'2001-02-04',created_by:'65161616'},
 	{id:3,title:'是佛啊是佛啊是佛i啊是佛啊寺活佛啊似乎萨法时',content:'啊是佛啊寺活佛啊似乎萨法佛啊是佛啊是佛i啊是佛啊寺活佛啊似乎萨法时族',created_at:'2001-02-04',created_by:'65161616'},
 ])
-const handleBack = () => {
-	uni.navigateBack()
-}
+// const handleBack = () => {
+// 	uni.navigateBack()
+// }
 
-const handleBackHome = () => {
-	uni.switchTab({
-		url:'/pages/index/index'
-	})
-}
+// const handleBackHome = () => {
+// 	uni.switchTab({
+// 		url:'/pages/index/index'
+// 	})
+// }
 </script>
 
 <style scoped lang="less">

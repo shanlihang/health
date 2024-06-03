@@ -106,7 +106,8 @@
   }
   @include e(content){
     margin-top: 7px;
-    color: $-steps-inactive-color;
+    // color: $-steps-inactive-color;
+	color: #fff;
     font-size: $-steps-label-fs;
   }
   @include e(title) {
@@ -120,11 +121,13 @@
   @include e(description) {
     margin-top: 5px;
     padding: 0 2px;
-    color: $-steps-description-color;
+    // color: $-steps-description-color;
+	color: #fff;
   }
   @include when(wait) {
     .wd-step__description {
-      color: $-steps-inactive-color;
+      // color: $-steps-inactive-color;
+	  color: #fff;
     }
   }
   @include when(finished) {
@@ -154,7 +157,7 @@
       border-color: $-steps-finished-color;
     }
     .wd-step__title {
-      color: $-steps-finished-color;
+      color: #fff;
     }
     .wd-step__icon {
       border-color: $-steps-finished-color;

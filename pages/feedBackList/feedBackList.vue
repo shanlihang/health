@@ -1,11 +1,11 @@
 <template>
 	<view class="feedBackList">
-		<wd-navbar title="意见反馈列表" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
+		<!-- <wd-navbar title="意见反馈列表" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
 		  <template #capsule>
 		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
 		  </template>
-		</wd-navbar>
-		<view class="item" v-for="item in data" :key="item.id">
+		</wd-navbar> -->
+		<view class="item" v-for="item in data" :key="item.id" @longpress="handleDelete">
 			<view class="up"> 
 				<wd-tag :type="item.isFinish==0?'warning':'success'" plain>{{item.isFinish==0?'待处理':'已处理'}}</wd-tag>
 				<text style="font-size: 24rpx;">反馈时间：{{item.time}}</text>
@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import {reactive} from 'vue'
+import {createModal,createToast} from '../../utils/feedback'
 
 const data = reactive([
 	{id:1,content:'fasfasfasf',time:'2024-05-10',isFinish:0},
@@ -24,15 +25,23 @@ const data = reactive([
 	{id:3,content:'fasfasfasf',time:'2024-05-10',isFinish:0},
 	{id:4,content:'fasfasfasfasfasfasfasfasfasfasfasfasfasfasfasfasfasf',time:'2024-05-10',isFinish:1},
 ])
-const handleBack = () => {
-	uni.navigateBack()
-}
 
-const handleBackHome = () => {
-	uni.switchTab({
-		url:'/pages/index/index'
+const handleDelete = () => {
+	createModal('确认删除','确认要删除此条反馈吗',(e) => {
+		if(e.confirm){
+			createToast('删除成功')
+		}
 	})
 }
+// const handleBack = () => {
+// 	uni.navigateBack()
+// }
+
+// const handleBackHome = () => {
+// 	uni.switchTab({
+// 		url:'/pages/index/index'
+// 	})
+// }
 </script>
 
 <style scoped lang="less">

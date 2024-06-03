@@ -1,9 +1,9 @@
 <template>
 	<view class="record" @click="closeOutside">
 		<view class="drop">
-			<wd-drop-menu custom-class="drop-menu">
-			    <wd-drop-menu-item v-model="choose.value1" :options="optionOne" />
-			    <wd-drop-menu-item v-model="choose.value2" :options="optionTwo" />
+			<wd-drop-menu custom-class="filter-menu">
+			    <wd-drop-menu-item custom-class="item-menu" v-model="choose.value1" :options="optionOne" />
+			    <wd-drop-menu-item custom-class="item-menu" v-model="choose.value2" :options="optionTwo" />
 			</wd-drop-menu>
 			<view class="other" @click="showFilter">筛选</view>
 		</view>
@@ -57,10 +57,14 @@ const showFilter = () => {
 	.drop{
 		display: flex;
 		align-items: center;
-		border-bottom: 2rpx solid #fff;
-		.drop-menu{
+		border-bottom: 2rpx solid #A0A0A0;
+		.filter-menu{
 			flex: 1 0 auto;
 			margin-right: 10rpx;
+			color: #fff;
+			.item-menu{
+				color: #fff;
+			}
 		}
 		.other{
 			width: 100rpx;

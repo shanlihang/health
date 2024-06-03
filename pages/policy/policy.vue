@@ -1,17 +1,17 @@
 <template>
 	<view class="policy">
-		<wd-navbar title="隐私政策" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
+		<!-- <wd-navbar title="隐私政策" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
 		  <template #capsule>
 		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
 		  </template>
-		</wd-navbar>
+		</wd-navbar> -->
 		<view class="content">
 			<h1>隐私政策</h1>
 			<div>更新日期：<strong>2024/5/6</strong></div>
 			<div>生效日期：<strong>2024/5/6</strong></div>
 			<h2>导言</h2>
 			<p>
-			  <i>健康小助手</i> 是一款由 <i>单立行</i> （以下简称“我们”）提供的产品。
+			  <i>健康小助手</i> 是一款由 <i>山东海科医疗科技服务有限公司</i> （以下简称“我们”）提供的产品。
 			  您在使用我们的服务时，我们可能会收集和使用您的相关信息。我们希望通过本《隐私政策》向您说明，在使用我们的服务时，我们如何收集、使用、储存和分享这些信息，以及我们为您提供的访问、更新、控制和保护这些信息的方式。
 			  本《隐私政策》与您所使用的 <i>健康小助手</i> 服务息息相关，希望您仔细阅读，在需要时，按照本《隐私政策》的指引，作出您认为适当的选择。本《隐私政策》中涉及的相关技术词汇，我们尽量以简明扼要的表述，并提供进一步说明的链接，以便您的理解。
 			</p>
@@ -110,15 +110,15 @@
 </template>
 
 <script setup lang="ts">
-const handleBack = () => {
-	uni.navigateBack()
-}
+// const handleBack = () => {
+// 	uni.navigateBack()
+// }
 
-const handleBackHome = () => {
-	uni.switchTab({
-		url:'/pages/index/index'
-	})
-}
+// const handleBackHome = () => {
+// 	uni.switchTab({
+// 		url:'/pages/index/index'
+// 	})
+// }
 </script>
 
 <style scoped lang="less">

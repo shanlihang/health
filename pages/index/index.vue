@@ -210,14 +210,14 @@ onLoad(() => {
 			.tips{
 				height: 100%;
 				.tip{
-					padding: 0 10rpx;
+					padding: 0 20rpx;
 					height: 60rpx;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
 					border-bottom: 2rpx solid #383838;
 					.label{
-						width: 80%;
+						width: 70%;
 						font-size: 24rpx;
 						overflow: hidden;
 						white-space: nowrap;
@@ -226,7 +226,7 @@ onLoad(() => {
 					.time{
 						margin-left: 50rpx;
 						text-align: right;
-						width: 120rpx;
+						width: 20%;
 						font-size: 18rpx;
 					}
 				}

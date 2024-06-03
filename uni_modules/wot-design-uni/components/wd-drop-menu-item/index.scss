@@ -28,6 +28,7 @@
 
   @include e(option) {
     display: flex;
+	background-color: #494949;
     height: $-drop-menu-item-height;
     line-height: $-drop-menu-item-height;
     padding: 0 $-drop-menu-side-padding;

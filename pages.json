@@ -111,7 +111,8 @@
     ],
 	"globalStyle": {
 		// "navigationStyle": "custom"
-		"navigationBarBackgroundColor": "#494949"
+		"navigationBarBackgroundColor": "#494949",
+		"navigationBarTextStyle":"white"
 	},
 	"tabBar": {
 		"color": "#A0A0A0",

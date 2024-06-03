@@ -96,7 +96,7 @@
     position: relative;
     display: flex;
     width: $-input-cell-label-width;
-    color: $-cell-title-color;
+    // color: $-cell-title-color;
     margin-right: $-cell-padding;
     box-sizing: border-box;
     font-size: $-textarea-fs;
@@ -142,7 +142,7 @@
     position: relative;
     padding: 0;
     font-size: 0;
-    background: $-textarea-bg;
+    background: #494949;
     padding-right: 24px;
     box-sizing: border-box;
 
@@ -161,7 +161,7 @@
     width: 100%;
     font-size: $-textarea-fs;
     line-height: $-cell-line-height;
-    color: $-textarea-color;
+    // color: $-textarea-color;
     outline: none;
     background: none;
     border: none;
@@ -192,9 +192,9 @@
   @include edeep(clear) {
     margin-left: $-textarea-icon-margin;
     font-size: $-textarea-icon-size;
-    color: $-textarea-clear-color;
+    color: #fff;
     vertical-align: middle;
-    background: $-textarea-bg;
+    // background: $-textarea-bg;
     line-height: $-cell-line-height;
   }
 
@@ -205,7 +205,7 @@
     right: 0;
     font-size: $-textarea-count-fs;
     color: $-textarea-count-color;
-    background: $-textarea-bg;
+    // background: $-textarea-bg;
     line-height: 20px;
     display: inline-flex;
   }

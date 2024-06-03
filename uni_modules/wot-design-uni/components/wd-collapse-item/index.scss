@@ -42,7 +42,7 @@
   }
 
   @include e(title) {
-    color: $-collapse-title-color;
+    color: #fff;
     font-weight: $-fw-medium;
     font-size: $-collapse-title-fs;
   }

@@ -25,7 +25,6 @@
   @include e(list) {
     display: flex;
     text-align: center;
-    background-color: #fff;
   }
   @include e(item) {
     flex: 1;

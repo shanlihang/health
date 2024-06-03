@@ -1,11 +1,11 @@
 <template>
 	<view class="info">
 		<wd-message-box />
-		<wd-navbar title="个人信息" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
+		<!-- <wd-navbar title="个人信息" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
 		  <template #capsule>
 		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
 		  </template>
-		</wd-navbar>
+		</wd-navbar> -->
 		<view class="box">
 			<view class="content">
 				<view class="item large">
@@ -100,15 +100,15 @@ const handleClose = () => {
 	console.log('关闭');
 }
 
-const handleBack = () => {
-	uni.navigateBack()
-}
+// const handleBack = () => {
+// 	uni.navigateBack()
+// }
 
-const handleBackHome = () => {
-	uni.switchTab({
-		url:'/pages/index/index'
-	})
-}
+// const handleBackHome = () => {
+// 	uni.switchTab({
+// 		url:'/pages/index/index'
+// 	})
+// }
 </script>
 
 <style scoped lang="less">

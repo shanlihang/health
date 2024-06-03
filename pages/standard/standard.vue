@@ -1,10 +1,10 @@
 <template>
 	<view class="standard">
-		<wd-navbar title="标准指标" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
+		<!-- <wd-navbar title="标准指标" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
 		  <template #capsule>
 		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
 		  </template>
-		</wd-navbar>
+		</wd-navbar> -->
 		<view class="block">
 			<view class="group">常用指标</view>
 			<wd-table :data="BASE">
@@ -101,15 +101,15 @@ const FAT = reactive([
 	{label:'骨量',man:'',woman:'',uint:'kg'},
 ])
 
-const handleBack = () => {
-	uni.navigateBack()
-}
+// const handleBack = () => {
+// 	uni.navigateBack()
+// }
 
-const handleBackHome = () => {
-	uni.switchTab({
-		url:'/pages/index/index'
-	})
-}
+// const handleBackHome = () => {
+// 	uni.switchTab({
+// 		url:'/pages/index/index'
+// 	})
+// }
 </script>
 
 <style lang="less" scoped>
