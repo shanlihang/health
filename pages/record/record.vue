@@ -2,10 +2,13 @@
 	<view class="record" @click="closeOutside">
 		<view class="drop">
 			<wd-drop-menu custom-class="filter-menu">
-			    <wd-drop-menu-item custom-class="item-menu" v-model="choose.value1" :options="optionOne" />
-			    <wd-drop-menu-item custom-class="item-menu" v-model="choose.value2" :options="optionTwo" />
+			    <wd-drop-menu-item custom-class="item-menu" v-model="data.time" :options="optionOne" />
+			    <wd-drop-menu-item custom-class="item-menu" v-model="data.sort" :options="optionTwo" />
 			</wd-drop-menu>
 			<view class="other" @click="showFilter">筛选</view>
+		</view>
+		<view class="card" v-for="item in data.table">
+			<ResultCard :item="item" @click="showDetail(item.ID)" />
 		</view>
 		
 	</view>
@@ -26,14 +29,19 @@
 <script lang="ts" setup>
 import {reactive, ref} from 'vue'
 import { useQueue } from '@/uni_modules/wot-design-uni'
+import {getRecordList} from '../../api/record'
+import {onLoad} from '@dcloudio/uni-app'
+import {Data} from './model'
+import ResultCard from '../../components/ResultCard/ResultCard.vue'
 
 const { closeOutside } = useQueue()
 
 const filter = ref<boolean>(false)
 
-const choose = reactive({
-	value1:0,
-	value2:0
+const data = reactive<Data>({
+	time:0,
+	sort:0,
+	table:[]
 })
 
 const optionOne = reactive([
@@ -46,9 +54,25 @@ const optionTwo = reactive([
   { label: '时间升序', value: 1 },
 ])
 
+const showDetail = (id:number) => {
+	uni.navigateTo({
+		url:'/pages/detail/detail?id='+id
+	})
+}
+
 const showFilter = () => {
 	filter.value = true
 }
+
+const initData = () => {
+	getRecordList({}).then(res => {
+		data.table = res.data
+	})
+}
+
+onLoad(() => {
+	initData()
+})
 </script>
 
 <style scoped lang="less">

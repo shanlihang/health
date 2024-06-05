@@ -108,6 +108,15 @@
         		"enablePullDownRefresh" : false
         	}
         }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "检测详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		// "navigationStyle": "custom"
