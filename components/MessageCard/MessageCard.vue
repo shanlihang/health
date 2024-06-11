@@ -2,7 +2,7 @@
 	<view class="msgCard">
 		<view class="title">
 			<text>{{item.title}}</text>
-			<text>{{item.created_at}}</text>
+			<text>{{item.CreatedAt}}</text>
 		</view>
 		<view class="content">
 			{{item.content}}
@@ -33,6 +33,7 @@ const props = defineProps(['item'])
 	}
 	.content{
 		width: 100%;
+		min-height: 100rpx;
 		padding: 0 10rpx;
 		line-height: 40rpx;
 		font-size: 18rpx;

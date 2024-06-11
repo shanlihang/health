@@ -116,6 +116,14 @@
                 "enablePullDownRefresh": false
             }
             
+        },
+        {
+        	"path" : "pages/pushDetail/pushDetail",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "推送详情",
+        		"enablePullDownRefresh" : false
+        	}
         }
     ],
 	"globalStyle": {

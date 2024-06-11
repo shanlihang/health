@@ -4,9 +4,9 @@
 			<view class="title">今日推送</view>
 			<view class="content">
 				<scroll-view class="tips" :scroll-top="0" scroll-y="true">
-					<view class="tip" v-for="item in tips" :key="item.id">
+					<view class="tip" v-for="item in tips" :key="item.ID" @click="showPush(item.ID)">
 						<view class="label">{{item.title}}</view>
-						<view class="time">{{item.time}}</view>
+						<view class="time">{{item.CreatedAt}}</view>
 					</view>
 				</scroll-view>
 			</view>
@@ -42,22 +42,16 @@
 
 <script setup lang="ts">
 import {reactive} from 'vue'
+import {getPushList} from '../../api/push'
 import {onLoad} from '@dcloudio/uni-app'
 
-const tips = reactive([
-	{id:1,title:'感冒药要凡是含有〈扑尔敏〉的成分都会犯困',time:'2024-05-18'},
-	{id:2,title:'浸润型肺结核大咯血采取：患侧卧位',time:'2024-05-18'},
-	{id:3,title:'呼吸困难最早出现于：左心衰竭',time:'2024-05-18'},
-	{id:4,title:'慢性支气管炎急性发作期治疗最主要的措施是：控制感染',time:'2024-05-18'},
-	{id:5,title:'小儿《12岁以下》发烧：美林',time:'2024-05-18'},
-	{id:6,title:'哪一种疾病，最易发生呼吸衰竭：阻塞性肺气肿',time:'2024-05-18'},
-	{id:7,title:'哮喘：布地奈德雾剂（普米克） 硫酸沙丁胺醇吸入气雾剂（万托林） 沙丁胺醇气雾剂（信宜）',time:'2024-05-18'},
-	{id:8,title:'一般在服毒后几小时内洗胃最有效：4~6 小时内',time:'2024-05-18'},
-	{id:9,title:'肠胃炎：胃肠安丸',time:'2024-05-18'},
-	{id:10,title:'呼吸困难最常见于：左心功能不全',time:'2024-05-18'},
-	{id:11,title:'感冒药要凡是含有〈扑尔敏〉的成分都会犯困',time:'2024-05-18'},
-	{id:12,title:'对溺水所致呼吸心跳骤停者，其紧急处理措施是：人工呼吸和胸外心脏按压',time:'2024-05-18'},
-])
+const tips = reactive([])
+
+const showPush = (id:number) => {
+	uni.navigateTo({
+		url:'/pages/pushDetail/pushDetail?id='+id
+	})
+}
 
 const init = () => {
 	let res1 = {
@@ -183,8 +177,18 @@ const chatThree = reactive({
 	}
 })
 
+const initPush = () => {
+	tips.length = 0
+	getPushList({}).then(res => {
+		res.data.forEach(item => {
+			tips.push(item)
+		})
+	})
+}
+
 onLoad(() => {
 	init()
+	initPush()
 })
 
 </script>
