@@ -18,6 +18,8 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import { useToast } from '@/uni_modules/wot-design-uni'
+import {createFeedback} from '../../api/feedback'
+
 
 const toast = useToast()
 
@@ -27,7 +29,16 @@ const submit = () => {
 	if(content.value == ''){
 		toast.warning('反馈信息不能为空')
 	}else{
-		toast.show('反馈成功')
+		createFeedback({
+			content:content.value,
+			status:0
+		}).then(res => {
+			if(res.rowAffect != 0){
+				content.value = ''
+				toast.show('反馈成功')
+			}
+		})
+		
 	}
 }
 

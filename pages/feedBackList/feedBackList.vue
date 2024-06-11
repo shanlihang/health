@@ -5,10 +5,10 @@
 		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
 		  </template>
 		</wd-navbar> -->
-		<view class="item" v-for="item in data" :key="item.id" @longpress="handleDelete">
+		<view class="item" v-for="item in data" :key="item.ID" @longpress="handleDelete(item.ID)">
 			<view class="up"> 
-				<wd-tag :type="item.isFinish==0?'warning':'success'" plain>{{item.isFinish==0?'待处理':'已处理'}}</wd-tag>
-				<text style="font-size: 24rpx;">反馈时间：{{item.time}}</text>
+				<wd-tag :type="item.status==0?'warning':'success'" plain>{{item.status==0?'待处理':'已处理'}}</wd-tag>
+				<text style="font-size: 24rpx;">反馈时间：{{item.CreatedAt}}</text>
 			</view>
 			<view class="down">{{item.content}}</view>
 		</view>
@@ -18,30 +18,37 @@
 <script setup lang="ts">
 import {reactive} from 'vue'
 import {createModal,createToast} from '../../utils/feedback'
+import {getfeedBackList,deleteFeedback} from '../../api/feedback'
+import {onLoad} from '@dcloudio/uni-app'
 
-const data = reactive([
-	{id:1,content:'fasfasfasf',time:'2024-05-10',isFinish:0},
-	{id:2,content:'fasfasfasf',time:'2024-05-10',isFinish:0},
-	{id:3,content:'fasfasfasf',time:'2024-05-10',isFinish:0},
-	{id:4,content:'fasfasfasfasfasfasfasfasfasfasfasfasfasfasfasfasfasf',time:'2024-05-10',isFinish:1},
-])
+const data = reactive([])
 
-const handleDelete = () => {
+const handleDelete = (id:number) => {
+	console.log(id);
 	createModal('确认删除','确认要删除此条反馈吗',(e) => {
 		if(e.confirm){
-			createToast('删除成功')
+			deleteFeedback(id).then(res => {
+				if(res.rowAffect != 0){
+					createToast('删除成功')
+				}
+			})
+			initData()
 		}
 	})
 }
-// const handleBack = () => {
-// 	uni.navigateBack()
-// }
 
-// const handleBackHome = () => {
-// 	uni.switchTab({
-// 		url:'/pages/index/index'
-// 	})
-// }
+const initData = () => {
+	data.length = 0
+	getfeedBackList({}).then((res => {
+		res.data.forEach(item  => {
+			data.push(item)
+		})
+	}))
+}
+
+onLoad(() => {
+	initData()
+})
 </script>
 
 <style scoped lang="less">
