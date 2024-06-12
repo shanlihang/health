@@ -43,7 +43,7 @@ onLoad((option) => {
 		text-align: center;
 	}
 	.content{
-		min-height: 100rpx;
+		min-height: 500rpx;
 		text-indent: 2rem;
 	}
 	.time{

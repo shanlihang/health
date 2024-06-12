@@ -1,14 +1,9 @@
 <template>
 	<view class="info">
 		<wd-message-box />
-		<!-- <wd-navbar title="个人信息" left-arrow custom-style="background-color: #383838;color: #E0E0E0;">
-		  <template #capsule>
-		    <wd-navbar-capsule @back="handleBack" @back-home="handleBackHome" />
-		  </template>
-		</wd-navbar> -->
 		<view class="box">
 			<view class="content">
-				<view class="item large">
+				<!-- <view class="item large">
 					<text class="label">头像</text>
 					<view class="value">
 						<view>
@@ -16,7 +11,7 @@
 						</view>
 						<wd-icon name="arrow-right" size="22px"></wd-icon>
 					</view>
-				</view>
+				</view> -->
 				<view class="item">
 					<text class="label">姓名</text>
 					<view class="value">

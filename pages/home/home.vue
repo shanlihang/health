@@ -7,7 +7,7 @@
 				</view>
 				<view class="name">
 					<view style="margin-bottom: 20rpx;">昵称</view>
-					<wd-tag color="#FAA21E" bg-color="#FAA21E" plain>认证状态</wd-tag>
+					<wd-tag color="#FAA21E" bg-color="#FAA21E" plain>已认证</wd-tag>
 				</view>
 				<wd-icon name="arrow-right" size="28px" style="display: flex;align-items: center;" @click="setInfo"></wd-icon>
 			</view>

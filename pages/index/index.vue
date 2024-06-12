@@ -6,7 +6,7 @@
 				<scroll-view class="tips" :scroll-top="0" scroll-y="true">
 					<view class="tip" v-for="item in tips" :key="item.ID" @click="showPush(item.ID)">
 						<view class="label">{{item.title}}</view>
-						<view class="time">{{item.CreatedAt}}</view>
+						<view class="time">{{dataFormat(item.CreatedAt)}}</view>
 					</view>
 				</scroll-view>
 			</view>
@@ -23,12 +23,12 @@
 				<qiun-data-charts
 				  type="pie"
 				  :opts="chatOne.opts"
-				  :chartData="chatOne.chartData"
+				  :chartData="chatTwo.chartData"
 				/>
 			</view>
 		</view>
 		<view class="line">
-			<view class="title">折线图</view>
+			<view class="title">检测数据变化</view>
 			<view class="content">
 				<qiun-data-charts
 				  type="mix"
@@ -44,6 +44,11 @@
 import {reactive} from 'vue'
 import {getPushList} from '../../api/push'
 import {onLoad} from '@dcloudio/uni-app'
+import {dayjs} from '@/uni_modules/iRainna-dayjs/js_sdk/dayjs.min.js'
+
+const dataFormat = (time:string) => {
+	return dayjs(time).format('YYYY-MM-DD HH:mm:ss')
+}
 
 const tips = reactive([])
 
@@ -57,22 +62,22 @@ const init = () => {
 	let res1 = {
 		series: [
 			{
-			  data: [{"name":"高血压","value":50},{"name":"低血压","value":30},{"name":"心脏病","value":20},{"name":"高血糖","value":18}]
+			  data: [{"name":"高血压","value":50},{"name":"低血压","value":30},{"name":"正常","value":20}]
 			}
 		]
 	}
 	let res2 = {
 		series: [
 			{
-			  data: [{"name":"高血压","value":500},{"name":"低血压","value":300},{"name":"心脏病","value":250},{"name":"高血糖","value":108}]
+			  data: [{"name":"正常","value":500},{"name":"低血糖","value":300},{"name":"高血糖","value":108}]
 			}
 		]
 	}
 	let res3 = {
-		categories: ["2018","2019","2020","2021","2022","2023"],
+		categories: ["一","二","三","四","五","六"],
 		series: [
 		{
-			name: "曲线",
+			name: "尿酸",
 			type: "line",
 			style: "curve",
 			color: "#1890ff",
@@ -80,7 +85,7 @@ const init = () => {
 			data: [70,50,85,130,64,88]
 		},
 		{
-			name: "折线",
+			name: "胆固醇",
 			type: "line",
 			color: "#2fc25b",
 			data: [120,140,105,170,95,160]
@@ -142,7 +147,7 @@ const chatThree = reactive({
 		legend: {},
 		xAxis: {
 			disableGrid: true,
-			title: "年"
+			title: "月"
 		},
 		yAxis: {
 			disabled: false,
@@ -156,13 +161,13 @@ const chatThree = reactive({
 			data: [
 			{
 				position: "left",
-				title: "折线"
+				title: "数值"
 			},
 			{
 				position: "right",
 				min: 0,
 				max: 200,
-				title: "柱状图",
+				title: "数值",
 				textAlign: "left"
 			},
 			]
@@ -230,7 +235,7 @@ onLoad(() => {
 					.time{
 						margin-left: 50rpx;
 						text-align: right;
-						width: 20%;
+						width: 30%;
 						font-size: 18rpx;
 					}
 				}

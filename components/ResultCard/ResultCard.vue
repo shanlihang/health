@@ -38,6 +38,7 @@ const props = defineProps(['item'])
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	padding: 10rpx;
 	.content{
 		padding: 0 12rpx;
 		display: flex;

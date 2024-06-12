@@ -2,7 +2,7 @@
 	<view class="msgCard">
 		<view class="title">
 			<text>{{item.title}}</text>
-			<text>{{item.CreatedAt}}</text>
+			<text>{{dataFormat(item.CreatedAt)}}</text>
 		</view>
 		<view class="content">
 			{{item.content}}
@@ -11,6 +11,12 @@
 </template>
 
 <script lang="ts" setup>
+import {dayjs} from '@/uni_modules/iRainna-dayjs/js_sdk/dayjs.min.js'
+
+const dataFormat = (time:string) => {
+	return dayjs(time).format('YYYY-MM-DD HH:mm:ss')
+}
+	
 const props = defineProps(['item'])
 
 </script>
