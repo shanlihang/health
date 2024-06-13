@@ -1,16 +1,15 @@
 <template>
 	<view class="home">
-		<view class="account">
+		<!-- <view class="account">
 			<view class="content">
 				<view class="avatar">
 					<image src="../../static/noAvatar.png" style="width: 200rpx;height: 200rpx;"></image>
 				</view>
-				<view class="name">
+				<view class="name" @click="setInfo">
 					<view>查看个人信息</view>
 				</view>
-				<wd-icon name="arrow-right" size="28px" style="display: flex;align-items: center;" @click="setInfo"></wd-icon>
 			</view>
-		</view>
+		</view> -->
 		<view class="menu">
 			<view class="item" v-for="item in baseMenu" :key="item.id" @click="navItem(item.router)">
 				<view class="left">
@@ -55,6 +54,7 @@
 import {reactive} from 'vue'
 
 const baseMenu = reactive([
+	{id:1,name:'个人信息',icon:'chart',router:'/pages/userInfo/userInfo'},
 	// {id:1,name:'检测报表',icon:'chart',router:'/pages/report/report'},
 	{id:2,name:'标准指标',icon:'keywords',router:'/pages/standard/standard'},
 	{id:3,name:'健康推送',icon:'chart-bubble',router:'/pages/message/message'},
@@ -77,39 +77,16 @@ const navItem = (path:string) => {
 	})
 }
 
-const setInfo = () => {
-	uni.navigateTo({
-		url:'/pages/userInfo/userInfo',
-	})
-}
+// const setInfo = () => {
+// 	uni.navigateTo({
+// 		url:'/pages/userInfo/userInfo',
+// 	})
+// }
 </script>
 
 <style lang="less" scoped>
 .home{
-	.account{
-		height: 300rpx;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		.content{
-			height: 200rpx;
-			width: 90%;
-			display: flex;
-			.avatar{
-				width: 200rpx;
-				height: 200rpx;
-				overflow: hidden;
-			}
-			.name{
-				height: 200rpx;
-				flex: 1 0 auto;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				text-align: right;
-			}
-		}
-	}
+	padding-top: 24rpx;
 	.menu{
 		margin: 0 24rpx;
 		border-radius: 12rpx;
