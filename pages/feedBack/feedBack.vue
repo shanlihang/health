@@ -19,10 +19,12 @@
 import {ref} from 'vue'
 import { useToast } from '@/uni_modules/wot-design-uni'
 import {createFeedback} from '../../api/feedback'
+import {onLoad} from '@dcloudio/uni-app'
 
 
 const toast = useToast()
 
+const id = ref<number>()
 const content = ref<string>('')
 
 const submit = () => {
@@ -31,7 +33,8 @@ const submit = () => {
 	}else{
 		createFeedback({
 			content:content.value,
-			status:0
+			status:0,
+			peopleId:id.value
 		}).then(res => {
 			if(res.rowAffect != 0){
 				content.value = ''
@@ -47,6 +50,10 @@ const selectList = () => {
 		url:'/pages/feedBackList/feedBackList'
 	})
 }
+
+onLoad(() => {
+	id.value = uni.getStorageSync('userInfo').ID
+})
 
 // const handleBack = () => {
 // 	uni.navigateBack()
