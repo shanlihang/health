@@ -7,7 +7,7 @@ const request = ({url,method,data}) =>{
             method: method,
             header: {
                 'content-type': 'application/json',
-                Authorization: uni.getStorageSync('token') ?? null
+                Authorization: '---000---'
 			},
             success: (res) => {
 				const result = res.data;

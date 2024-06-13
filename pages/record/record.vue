@@ -1,12 +1,12 @@
 <template>
 	<view class="record" @click="closeOutside">
-		<view class="drop">
+		<!-- <view class="drop">
 			<wd-drop-menu custom-class="filter-menu">
 			    <wd-drop-menu-item custom-class="item-menu" v-model="data.time" :options="optionOne" />
 			    <wd-drop-menu-item custom-class="item-menu" v-model="data.sort" :options="optionTwo" />
 			</wd-drop-menu>
 			<view class="other" @click="showFilter">筛选</view>
-		</view>
+		</view> -->
 		<view class="card" v-for="item in data.table">
 			<ResultCard :item="item" @click="showDetail(item.ID)" />
 		</view>
