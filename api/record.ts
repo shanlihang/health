@@ -15,3 +15,13 @@ export const getRecordById = function(id:number){
 		data:null
 	})
 }
+
+export const checkPeople = function(idnumber:string){
+	return request({
+		url:'/api/v1/medical/people/list',
+		method:'get',
+		data:{
+			idnumber:idnumber
+		}
+	})
+}

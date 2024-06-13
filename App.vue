@@ -1,7 +1,9 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			uni.navigateTo({
+				url:'/pages/check/check'
+			})
 		},
 		onShow: function() {
 			console.log('App Show')

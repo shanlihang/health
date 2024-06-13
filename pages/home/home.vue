@@ -6,8 +6,7 @@
 					<image src="../../static/noAvatar.png" style="width: 200rpx;height: 200rpx;"></image>
 				</view>
 				<view class="name">
-					<view style="margin-bottom: 20rpx;">昵称</view>
-					<wd-tag color="#FAA21E" bg-color="#FAA21E" plain>已认证</wd-tag>
+					<view>查看个人信息</view>
 				</view>
 				<wd-icon name="arrow-right" size="28px" style="display: flex;align-items: center;" @click="setInfo"></wd-icon>
 			</view>
@@ -56,7 +55,7 @@
 import {reactive} from 'vue'
 
 const baseMenu = reactive([
-	{id:1,name:'检测报表',icon:'chart',router:'/pages/report/report'},
+	// {id:1,name:'检测报表',icon:'chart',router:'/pages/report/report'},
 	{id:2,name:'标准指标',icon:'keywords',router:'/pages/standard/standard'},
 	{id:3,name:'健康推送',icon:'chart-bubble',router:'/pages/message/message'},
 	{id:4,name:'意见反馈',icon:'mail',router:'/pages/feedBack/feedBack'}
@@ -97,7 +96,6 @@ const setInfo = () => {
 			width: 90%;
 			display: flex;
 			.avatar{
-				margin-right: 20rpx;
 				width: 200rpx;
 				height: 200rpx;
 				overflow: hidden;
@@ -107,8 +105,8 @@ const setInfo = () => {
 				flex: 1 0 auto;
 				display: flex;
 				flex-direction: column;
-				align-items: flex-start;
 				justify-content: center;
+				text-align: right;
 			}
 		}
 	}
